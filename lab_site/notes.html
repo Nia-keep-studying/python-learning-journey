@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes — SJX Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">SJX<span class="dot">·</span>Lab</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="projects.html">Projects</a>
+                <a href="notes.html" class="active">Notes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>学习笔记</h1>
+
+                <div class="note-group">
+                    <h2>❌ 常见错误 TOP 9</h2>
+
+                    <div class="note-card error">
+                        <h3>1. 用 def 定义类</h3>
+                        <code class="bad">def IceCreamStand(Restaurant):</code>
+                        <code class="good">class IceCreamStand(Restaurant):</code>
+                        <p>类用 class，函数用 def，不混用。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>2. super.__init__ 缺少括号</h3>
+                        <code class="bad">super.__init__(restaurant_name, cuisine_type)</code>
+                        <code class="good">super().__init__(restaurant_name, cuisine_type)</code>
+                        <p>super 是类，super() 才是对象。必须先 () 再点方法。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>3. *args 用 append 导致嵌套</h3>
+                        <code class="bad">self.flavors.append(args)  → [("香草","草莓")]</code>
+                        <code class="good">self.flavors.extend(args)  → ["香草","草莓"]</code>
+                        <p>*args 是元组，append 整个塞进去，extend 才逐个展开。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>4. super() 传了未定义的变量</h3>
+                        <code class="bad">super().__init__(..., privileges, **kwargs)</code>
+                        <code class="good">super().__init__(..., **kwargs)</code>
+                        <p>变量必须先声明或作为参数传入才能使用。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>5. 给父类传了过多位置参数</h3>
+                        <code class="bad">TypeError: 父类只收2个位置参数，你传了3个</code>
+                        <code class="good">额外信息用关键字参数传入 **kwargs</code>
+                        <p>调用 super().__init__ 时只能传父类声明过的位置参数。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>6. 循环自赋值 self.x = self.x</h3>
+                        <code class="bad">self.privileges = self.privileges  → 右边不存在</code>
+                        <code class="good">self.privileges = self.kwargs.pop("privileges", [])</code>
+                        <p>必须明确数据来源，不能自己赋值给自己。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>7. dict.pop() 没给默认值</h3>
+                        <code class="bad">self.kwargs.pop("privileges")  → KeyError</code>
+                        <code class="good">self.kwargs.pop("privileges", [])  → 安全</code>
+                        <p>保底值：列表→[]，字典→{}，数字→0。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>8. for 循环边遍历边修改</h3>
+                        <code class="bad">for num in nums: nums.remove(num)</code>
+                        <code class="good">for num in nums[:]: nums.remove(num)</code>
+                        <p>遍历副本，在原始列表上操作。</p>
+                    </div>
+
+                    <div class="note-card error">
+                        <h3>9. f-string 嵌套引号冲突</h3>
+                        <code class="bad">f"{dict["key"]}"  → SyntaxError (3.11-)</code>
+                        <code class="good">f"{dict['key']}"  → 内外引号不同</code>
+                        <p>Python 3.11 以前外层双引号内层必须单引号。</p>
+                    </div>
+                </div>
+
+                <div class="note-group">
+                    <h2>📋 方法速查表</h2>
+                    <table class="ref-table">
+                        <thead>
+                            <tr><th>方法</th><th>作用</th><th>改原列表？</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>append(x)</td><td>加 1 个（整体）</td><td>✅</td></tr>
+                            <tr><td>extend(seq)</td><td>加 N 个（拆开）</td><td>✅</td></tr>
+                            <tr><td>insert(i, x)</td><td>指定位置插入</td><td>✅</td></tr>
+                            <tr><td>a + b</td><td>合并（新列表）</td><td>❌</td></tr>
+                            <tr><td>a += b</td><td>原地扩展（=extend）</td><td>✅</td></tr>
+                            <tr><td>a[i:i] = seq</td><td>切片插入</td><td>✅</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-group">
+                    <h2>🧠 super() 要点</h2>
+                    <ul class="checklist">
+                        <li><code>super</code> 是类，<code>super()</code> 是对象</li>
+                        <li>不用传 <code>self</code>，Python 自动处理</li>
+                        <li>只传父类声明过的位置参数</li>
+                        <li>额外参数走 <code>**kwargs</code></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built with Claude Code · 孙家祥的学习实验室 · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

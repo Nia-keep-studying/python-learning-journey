@@ -1,0 +1,77 @@
+
+
+# a = input("what kind of car do you want to rant: ")
+# if a.lower() == "bmw":
+#     print(f"Let me see if i can find {a.upper()}")
+# else:
+#     print(f"Let me see if i can find {a.title()}")
+
+
+#用餐
+# numbers = input("请问有多少人用餐： ")
+# if int(numbers) >= 8:
+#     print("抱歉，没有空桌子")
+# else:
+#     print("有空桌，可以预定")
+
+#10的整数倍
+# number = input("请输入一个判断的数字： ")
+# if int(number) % 10 == 0:
+#     print("这个数是10的整数倍")
+# else:
+#     print("这个数不是10的整数倍")
+
+#披萨调料
+# toppings = []
+
+# while True:
+#     topping = input("请输入要添加的馅料（如退出请输入quit）")
+#     if topping != "quit" :
+#         toppings.append(topping)
+#     else:
+#         break
+# print(f"你想要的馅料为{toppings}")
+
+#判断年龄
+
+# age = input("请输入年龄")
+# age = int(age)
+# if age < 3 :
+#     print("你可以免费游玩")
+# elif age <= 12 :
+#     print("你的票价为10￥")
+# else:
+#     print("您的票价为12￥")
+
+#熟食店
+# sandwish_orders = ["pastrami","original sandwish","pastrami","pastrami","spicy sandwish","double meet sandwish"]
+# finished_sandwiches = []
+# print("we are sold off pastrami")
+# while "pastrami" in sandwish_orders:
+#         sandwish_orders.remove("pastrami")
+  
+# while sandwish_orders:
+#     finished_sandwiches.append(sandwish_orders.pop())
+
+# for sandwish in sorted(finished_sandwiches):
+#     print(f"{sandwish}")
+
+# print(finished_sandwiches)
+
+#梦想中的旅游地
+# places = {}
+# active = True
+
+# while active:
+#     name = input("请输入调查人的名字")
+#     location = input("你梦想中的旅游地是哪里")
+#     tiaojian = input("是否继续采访（no为取消）")
+#     places[name] = location
+#     if tiaojian == "no":
+#         active = False
+    
+# for person,where in places.items():
+#     print(f"{person}的梦想旅行地是{where}")
+
+
+    

@@ -1,0 +1,51 @@
+
+foods = ["pizza","humbuger ","hot dog","coca-cola "]
+my_friends_foods = foods[:]
+print(foods)
+print(my_friends_foods)
+foods.append("ice cream")
+my_friends_foods.append("hot pot")
+
+for food in foods:
+    print(f"i like {food.rstrip()}.")
+print(foods)
+for friends_foods in my_friends_foods:
+    print(f"my friends really like {friends_foods}")
+print(my_friends_foods)
+# animals = ["panda","dog","cat","elephant","frog"]
+# for animal in animals:
+#     print(f"A {animal} can makes me happy!")
+# print("any of those would make a great pet")
+
+# Ping_Fang = []
+# for i in range(1,11):
+   
+#     Ping_Fang.append(i**2)
+# print(Ping_Fang)
+
+# for i in range(1,1000001):
+#     print(i)
+
+# test_list1 = list(range(1,1000001))
+# print(min(test_list1))
+# print(max(test_list1))
+# print(sum(test_list1))
+
+# list2 = list(range(1,21,2))
+# for i in list2:
+#     print(i)
+
+
+# list3 = list(range(3,31,3))
+# for i in list3:
+#     print(i)
+
+# list4 = []
+# for i in range(1,11):
+#     a = i**3
+#     list4.append(a)
+# for i in list4:
+#     print(i)
+
+# list5 = [i**3 for i in range(1,11)]
+# print(list5)

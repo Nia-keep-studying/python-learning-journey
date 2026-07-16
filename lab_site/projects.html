@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — SJX Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">SJX<span class="dot">·</span>Lab</div>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="projects.html" class="active">Projects</a>
+                <a href="notes.html">Notes</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>所有项目</h1>
+
+                <div class="project-group">
+                    <h2>🐍 Python 基础</h2>
+                    <div class="project-card">
+                        <h3>猜拳游戏</h3>
+                        <p>石头剪刀布 — random 模块入门，if-elif 分支练习</p>
+                        <div class="tags"><span>random</span><span>if-elif</span><span>input</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>晚餐邀请名单</h3>
+                        <p>列表增删改查 — append / insert / pop / remove / del</p>
+                        <div class="tags"><span>list</span><span>CRUD</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>城市信息字典</h3>
+                        <p>字典嵌套 — 字典套字典，items() 遍历</p>
+                        <div class="tags"><span>dict</span><span>nesting</span></div>
+                    </div>
+                </div>
+
+                <div class="project-group">
+                    <h2>🤖 AI Agent</h2>
+                    <div class="project-card">
+                        <h3>第一个 AI 调用</h3>
+                        <p>使用 Ollama + qwen2.5:3b 完成第一次模型对话</p>
+                        <div class="tags"><span>ollama</span><span>qwen2.5</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>多轮对话</h3>
+                        <p>把对话历史存在 messages 列表里，让模型记住上下文</p>
+                        <div class="tags"><span>history</span><span>messages</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>角色扮演</h3>
+                        <p>用 system prompt 让模型变成鲁迅的口气回答问题</p>
+                        <div class="tags"><span>system</span><span>role-play</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>批量提问</h3>
+                        <p>for 循环对三个问题依次调用模型</p>
+                        <div class="tags"><span>for</span><span>batch</span></div>
+                    </div>
+                </div>
+
+                <div class="project-group">
+                    <h2>🏗️ OOP 实战</h2>
+                    <div class="project-card">
+                        <h3>餐厅类</h3>
+                        <p>Restaurant 类 — __init__, self, 方法定义</p>
+                        <div class="tags"><span>class</span><span>self</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>冰淇淋店</h3>
+                        <p>继承 Restaurant — *args, extend, super().__init__</p>
+                        <div class="tags"><span>inheritance</span><span>super</span><span>*args</span></div>
+                    </div>
+                    <div class="project-card">
+                        <h3>电动车电池</h3>
+                        <p>Battery 实例作为 ElectricCar 的属性 — 组合模式</p>
+                        <div class="tags"><span>composition</span><span>instance-as-attribute</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Built with Claude Code · 孙家祥的学习实验室 · 2026</p>
+        </div>
+    </footer>
+</body>
+</html>

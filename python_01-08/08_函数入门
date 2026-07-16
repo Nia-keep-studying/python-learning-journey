@@ -1,0 +1,175 @@
+"""
+函数定义
+    语法结构：
+        def 函数名(参数1，参数2.....):
+            函数体
+            ....
+            [retuen 返回值]
+        注意事项：
+        1.定义函数的时候，参数可以被定义，也可以布被定义，一旦定义了参数，使用的时候一定需要传递参数
+        2.返回值这里加上[]，意味着可以有返回值，也可以没有返回值
+    3种方式：1.无传参无返回
+            2.有传参无返回
+            3.有传有回
+        
+        
+"""
+# import random
+# def sum():
+#     a = int(input("请输入一个数字"))
+#     b = int(input("在输入一个数字"))
+#     return a+b
+
+# print(sum())
+
+
+# def sum_02(num1,num2):
+#     return num1+num2
+
+# print(sum_02(1241,21))
+
+#8.1消息
+# def display_message():
+#     print("title of message right? :>")
+
+# display_message()
+
+# def favorite_book(book):
+#     print(f"one of my favorite books is {book.title()}")
+
+# favorite_book("迷宫草子")
+
+# def favorite_foods(foods):
+#     foods = input("你最喜欢的食物是什么")
+#     print(f"我最喜欢的食物之一是{foods}")
+
+# favorite_foods("motcha")
+
+#8.3 t-shirt
+# def make_shirt(shirt_words,size="M"):
+#     print(f"the size of shirt is {size}")
+#     print(f"we'll print {shirt_words} in your shirt")
+
+# make_shirt("woxihuan")
+
+#8.5 city
+# def describe_city(city,country):
+#     print(f"{city} is in {country}")
+
+# describe_city("shandong","china")
+
+#city country
+# def city_country():
+#     active = True
+#     while active:
+
+#         city = input("请输入城市(输入q退出)")
+#         if city == "q":
+#             active = False
+#         else:
+#             country = input("请输入国家")
+#             if country == "q":
+#                 active = False
+#             else:
+#                 print(f"{city},{country}")
+
+# city_country()
+
+#专辑 album
+
+# def make_album(music,singer,count=None):
+#     if count != None:
+#         album = {"music":music,"singer":singer,"count":count}
+#     else:    
+#         album = {"music":music,"singer":singer}
+#     return album
+
+# song1 = make_album("creppin up on you","hares")
+# song2 = make_album("trasure","mars","2")
+# song3 = make_album("attention","puth")
+# print(song1,song2,song3,sep="\n")
+
+#while 函数让用户输入
+# def make_album():
+#     while True:
+#         music = input("请输入专辑名(q为退出)")
+#         if music == "q":
+#             break
+#         singer = input("请输入歌手名")
+#         if singer == "q":
+#             break
+#         count = input("请输入歌曲数量")
+#         if count == "q":
+#             break
+#         elif count != "q" and count != None:
+#             album = {"music":music,"singer":singer,"count":count}
+#         elif count != "q" and count == None:    
+#             album = {"music":music,"singer":singer}
+#     return album
+
+# make_album()
+
+#8.9 message  and 8.10 发送消息
+# a = ["大家好","我是朱之文","朱之文也是普通人","没有大家就没有朱之文"]
+# sent_massage_list = []
+# def print_list(lists):
+#     for words in lists:
+#         print(f"{words}")
+#         sent_massage_list.append(words)
+#         a.remove(words)
+# print_list(a)
+
+# # def sent_massage():
+
+# # print(sent_massage_list)
+
+# massage = ["hello","python","studying!"]
+# send_massage = []
+
+# def sent_massage(lists,send_lists):
+#     for list in lists[:]:
+#         send_massage.append(list)
+#         lists.remove(list)
+        
+
+# def show_massage(send_lists):
+#     for word in send_lists:
+#         print(f"{word}")
+
+# sent_massage(massage,send_massage)
+# show_massage(send_massage)
+
+#随便写一个 *形参 会把所有形参封装成一个元组
+# def humbuger_toppings(*toppings):
+#     print(f"\nthe topping of humbuger are these")
+#     for topping in toppings:
+#         print(f"- {topping}")    
+
+# humbuger_toppings("cheese","cucumber","tomato")
+
+#8.12 sandwish 这个和上面的一样
+
+#8.13 用户简介
+# def build_profile(name,age,**kwargs):
+#     kwargs["name"] = name
+#     kwargs["age"] = age
+#     return kwargs
+
+# user_profile = build_profile("孙家祥","24",gender = "男",career = "无",favorite_food = "humbuger")
+
+# def print_profile(dictionary):
+#     for key,value in dictionary.items():
+#         print(f"\n{key} - {value}")
+
+# print_profile(user_profile)
+
+#汽车
+def car_info(manufacturer,model,**kwargs):
+    kwargs["manufacturer"] = manufacturer
+    kwargs["model"] = model
+    return kwargs
+
+car = car_info("subaru","outback",color = "blue",tow_package = True)
+
+for key,value in car.items():
+    print(f"{key} - {value}")
