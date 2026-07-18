@@ -37,6 +37,8 @@ def search_record():
                 break
         if active != True:
             print(f"没有找到{search_date}日期的记录")
+    else:
+        print("没有找到记录文件")
 
 def load_records():
     if location.exists():
@@ -54,6 +56,18 @@ def clean_json():
     else:
         print("没有记录，无需清空")
 
+def delete_items():
+    records = load_records()
+    if records:
+        date = input("请输入要删除哪天的记录： ")
+        for record in records[:]:
+            if record["date"] == date:
+                records.remove(record)
+                location.write_text(json.dumps(records,ensure_ascii=False),encoding="utf-8")
+                print(f"已删除 {date} 的学习记录")
+    else:
+        print("记录为空")
+
 def run():
     while True:
         print("\n请选择操作:")
@@ -61,7 +75,8 @@ def run():
         print("2.读取学习记录")
         print("3.查询学习记录")
         print("4.清空学习记录")
-        print("5.退出")
+        print("5.删除学习记录")
+        print("6.退出")
 
         option = input("\n请选择操作: ")
         if option == "1":
@@ -73,6 +88,8 @@ def run():
         elif option == "4":
             clean_json()
         elif option == "5":
+            delete_items() 
+        elif option == "6":
             print("正在退出")
             break
         else:
